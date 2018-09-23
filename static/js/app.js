@@ -17,8 +17,8 @@ filter.on("click", function() {
     var searchShape = d3.select("#shape").property("value");
     // console.log(searchDate);
 
-    // filter data set to match search date
-    // sightings = tableData.filter(sighting => sighting.datetime === searchDate).filter(sighting => sighting.state.toLowerCase() === searchState.toLowerCase());
+    // filter data set to match non-blank search criteria
+    
     sightings = tableData;
 
     if (searchDate != ""){
@@ -38,7 +38,7 @@ filter.on("click", function() {
         }
     console.log(searchDate != "");
 // 
-    // remove any existing rows from the previous search
+    // remove any existing results from the previous search
     d3.selectAll("tbody").remove();
     d3.select("#ufo-table").append("tbody");
 
